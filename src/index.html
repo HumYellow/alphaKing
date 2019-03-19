@@ -21,433 +21,574 @@
 <script src="./js/bootstrap.min.js"></script>
 <script src="./js/jquery.fullPage.js"></script>
 <script src="./js/slick.js"></script>
+<script src="./js/vue.min.js"></script>
 <script src="./js/index.js" type="text/javascript"></script>
 <!-- endbuild -->
 <script type="text/javascript"> 
+  var en = {
+    page1_text1: "我是英文我是英文",
+    page1_text2: "我是英文我是英文",
+    page1_text3: "我是英文我是英文",
+  };
+  var vn = {
+    page1_text1: "我是越文我是越文",
+    page1_text2: "我是越文我是越文",
+    page1_text3: "我是越文我是越文",
+  };
   $(document).on('ready',function(){
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        en:{
+          page1_text1: "我是英文我是英文",
+          page1_text2: "我是英文我是英文",
+          page1_text3: "我是英文我是英文",
+        },
+        vn:{
+          page1_text1: "我是越文我是越文",
+          page1_text2: "我是越文我是越文",
+          page1_text3: "我是越文我是越文",
+        },
+        ln:{
+          ln:"en",
+          page1_text1: "123",
+          page1_text2: "",
+          page1_text3: "",
+        }
+      },
+      methods: {
+          details: function() {
+              return  this.site + " - 学的不仅是技术，更是梦想！";
+          },
+          switchLn:function(ln){
+            for(var a in ln){
+              this.ln[a] = ln[a]
+            }
+            
+          },
+          say: function (message) {
+            alert(message)
+          }
+      },
+      mounted:function(){
+        this.switchLn(en);
+      }
+
+    })
+
+
     if(alpha)alpha.init();
   })
   /*window.onresize = function(){
     location.reload();
   }*/
+
 </script>
 </head>
 <body>
-  <nav>
-    <div id="menu" class="menuBox in">
-      <div class="phoneMenuBtn clear">
-        <button id="navbarBtn" _ngcontent-c2="" aria-controls="navbar" aria-expanded="false" class="navbar-toggle collapsed" data-target="#navBox" data-toggle="collapse" type="button">
-          <span _ngcontent-c2="" class="sr-only">Toggle navigation</span>
-          <span _ngcontent-c2="" class="icon-bar"></span>
-          <span _ngcontent-c2="" class="icon-bar"></span>
-          <span _ngcontent-c2="" class="icon-bar"></span>
-        </button>
-        <div class="phonelogoImg"><img src="./images/apk_logo.png" /></div>
-      </div>
-      <div id="navBox" class="collapse">
-        <div data-menuanchor="home" class="menuMod active"><a href="#home">HOME</a></div>
-        <div data-menuanchor="about" class="menuMod"><a href="#about">ABOUT US</a></div>
-        <div data-menuanchor="meet" class="menuMod"><a href="#meet">MEET OUR CREATORS</a></div>
-        <div class="logoImg"><img width="60%"  src="./images/apk_logo.png" /></div>
-        <div data-menuanchor="our" class="menuMod"><a href="#our">OUR PARTNERS</a></div>
-        <div data-menuanchor="projects" class="menuMod"><a href="#projects">PROJECTS</a></div>
-        <div data-menuanchor="news" class="menuMod"><a href="#news">NEWS</a></div>
-        </div>
-     </div>
-   </nav>
-    <div id="fullPage">
-     <div id="page_1" class="section">
-       <div class="pageCenter pageFlash">
-         <div class="pageMod_1">
-           <h2 class="headText">Transform</h2>
-           <h3 class="pageText">The city skyline</h3>
-           <a class="explore" href="#about"><span>Explore</span></a>
-         </div>
-         <div class="pageMod_2">
-           <p>The city skyline is about to transform. Stay tuned ! </p>
-         </div>
-       </div>
-     </div>
-     <div id="page_2" class="section">
-        <div class="pageCenter"></div>
-         <div id="video"></div>
-         <div style="position:absolute;left:0;top:0; width:100%; height:100%;"></div>
-     </div>
-     <div id="page_3" class="section">
-       <div class="pageCenter">
-         <h2 class="headText">MEET OUR CREATORS</h2>
-         <h4 class="pageText">We are a group of real estate experts that share the common passion of doing impossible things. Never compromising on any detail, we are dedicated to creating world-impacted properties. Building the future with our own hands.</h4>
-         <div class="leaderList clear">
-           <div class="leaderMod">
-             <div class="flip-container" flip-name="Jimmy">
-               <a class="flipper">
-                 <span class="front"><img width="100%" src="./images/Jimmy.png"></span>
-               </a>
-             </div>
-             <p class="leaderName">Jimmy Chan</p>
-             <p class="leaderTitle">CEO</p>
-           </div>
-           <div class="leaderMod">
-             <div class="flip-container" flip-name="Graham">
-               <a class="flipper">
-                 <span class="front"><img width="100%" src="./images/Graham.png"></span>
-               </a>
-             </div>
-             <p class="leaderName">Graham Goldman</p>
-             <p class="leaderTitle">COO</p>
-           </div>
-           <div class="leaderMod">
-             <div class="flip-container" flip-name="EricChan">
-               <a class="flipper">
-                 <span class="front"><img width="100%" src="./images/EricChan.png"></span>
-               </a>
-             </div>
-             <p class="leaderName">Eric Chan</p>
-             <p class="leaderTitle">CFO</p>
-           </div>
-           <div class="leaderMod">
-             <div class="flip-container" flip-name="NicholasTan">
-               <a class="flipper">
-                 <span class="front"><img width="100%" src="./images/NicholasTan.png" /></span>
-               </a>
-             </div>
-             <p class="leaderName">Nicholas Tan</p>
-             <p class="leaderTitle">Managing Director</p>
-           </div>
-           <div class="leaderMod">
-             <div class="flip-container" flip-name="Marice">
-               <a class="flipper">
-                 <span class="front"><img width="100%" src="./images/Marice.png" /></span>
-               </a>
-             </div>
-             <p class="leaderName">Marice Verna</p>
-             <p class="leaderTitle">Principle Director</p>
-           </div>
-           <div class="leaderMod">
-             <div class="flip-container" flip-name="Lauren">
-               <a class="flipper">
-                 <span class="front"><img width="100%" src="./images/Lauren.png" /></span>
-               </a>
-             </div>
-             <p class="leaderName">Lauren Atkins</p>
-             <p class="leaderTitle">Commercial & Contract Director</p>
-           </div>
-           <div class="leaderMod">
-             <div class="flip-container" flip-name="Kevin">
-               <a class="flipper">
-                 <span class="front"><img width="100%" src="./images/Kevin.png" /></span>
-               </a>
-             </div>
-             <p class="leaderName">Kevin Xu</p>
-             <p class="leaderTitle">Project Integration Solutions Director</p>
-           </div>
-           <div class="leaderMod">
-             <div class="flip-container" flip-name="An">
-               <a class="flipper">
-                 <span class="front"><img width="100%" src="./images/An.png" /></span>
-               </a>
-             </div>
-             <p class="leaderName">An Ngo</p>
-             <p class="leaderTitle">Business Development Director</p>
-           </div>
-           <div class="leaderMod">
-             <div class="flip-container" flip-name="Raymond">
-               <a class="flipper">
-                 <span class="front"><img width="100%" src="./images/Raymond.png" /></span>
-               </a>
-             </div>
-             <p class="leaderName">Raymond Yang</p>
-             <p class="leaderTitle">Business Relations Director</p>
-           </div>
-           <div class="leaderMod">
-             <div class="flip-container" flip-name="Hien">
-               <a class="flipper">
-                 <span class="front"><img width="100%" src="./images/Hien.png" /></span>
-               </a>
-             </div>
-             <p class="leaderName">Hien Do</p>
-             <p class="leaderTitle">Marketing Director</p>
-           </div>
-           <div class="leaderMod">
-             <div class="flip-container" flip-name="Jenny">
-               <a class="flipper">
-                 <span class="front"><img width="100%" src="./images/Jenny.png" /></span>
-               </a>
-             </div>
-             <p class="leaderName">Jenny Nguyen</p>
-             <p class="leaderTitle">Sales Director</p>
-           </div>
-           <div class="leaderMod">
-             <div class="flip-container" flip-name="Samson">
-               <a class="flipper">
-                 <span class="front"><img width="100%" src="./images/Samson.png" /></span>
-               </a>
-             </div>
-             <p class="leaderName">Samson Ngov</p>
-             <p class="leaderTitle">Design Management Director</p>
-           </div>
-           <div class="leaderMod">
-             <div class="flip-container" flip-name="Edward">
-               <a class="flipper">
-                 <span class="front"><img width="100%" src="./images/Edward.png" /></span>
-               </a>
-             </div>
-             <p class="leaderName">Edward Coleman</p>
-             <p class="leaderTitle">Program & QC Director</p>
-           </div>
-           <div class="leaderMod">
-             <div class="flip-container" flip-name="Aurelio">
-               <a class="flipper">
-                 <span class="front"><img width="100%" src="./images/Aurelio.png" /></span>
-               </a>
-             </div>
-             <p class="leaderName">Aurelio Doetsch</p>
-             <p class="leaderTitle">Project Director</p>
-           </div>
-           <div class="leaderMod">
-             <div class="flip-container" flip-name="Hang">
-               <a class="flipper">
-                 <span class="front"><img width="100%" src="./images/Hang.png" /></span>
-               </a>
-             </div>
-             <p class="leaderName">Hang Nguyen</p>
-             <p class="leaderTitle">Asset Management & Strategic Planning Director</p>
-           </div>
-           <div class="leaderMod">
-             <div class="flip-container" flip-name="Tzuyin">
-               <a class="flipper">
-                 <span class="front"><img width="100%" src="./images/Tzuyin.png" /></span>
-               </a>
-             </div>
-             <p class="leaderName">Tzu-Yin Lu</p>
-             <p class="leaderTitle">Interior Design Director</p>
-           </div>
-           <div class="leaderMod">
-             <div class="flip-container" flip-name="William">
-               <a class="flipper">
-                 <span class="front"><img width="100%" src="./images/William.png" /></span>
-               </a>
-             </div>
-             <p class="leaderName">Will Hoc Nhan</p>
-             <p class="leaderTitle">Commercial Assets Director</p>
-           </div>
-           <div class="leaderMod">
-             <div class="flip-container" flip-name="Eric">
-               <a class="flipper">
-                 <span class="front"><img width="100%" src="./images/Eric.png" /></span>
-               </a>
-             </div>
-             <p class="leaderName">Eric Niborg</p>
-             <p class="leaderTitle">Principal Design Director</p>
-           </div>
-         </div>
-       </div>
-       <div id="memberBox" class="memberBox">
-         <a class="closeBtn" onclick="alpha.memberPopup.closePop()">[X]</a>
-         <img class="memberPic" src="./images/EricChan.png" />
-         <div class="textBox">
-           <h4 class="memberName"></h4>
-           <h5 class="memberTitle"></h5>
-           <p class="memberDetail"></p>
-         </div>
-       </div>
-     </div>
-     <div id="page_4" class="section">
-       <div class="pageCenter">
-         <h2 class="headText">OUR PARTNERS</h2>
-         <h4 class="pageText">These corporates have partnered with us to find innovative ways to transform the city skyline. Alpha King gratefully acknowledges them for their continued support.</h4>
-         <div class="ourPartnersList">
-           <div class="partnersLogo1">
-             <div class="partnersLogo clear">
-               <div class="partnersLogoMod"><a href="http://www.csgglass.com/" target="_blank"><img width="100%" src="./images/image001.png" /></a></div>
-               <div class="partnersLogoMod"><a href="https://www.schindler.com/com/internet/en/home.html" target="_blank"><img width="100%" src="./images/image002.png" /></a></div>
-              <div class="partnersLogoMod"><a href="http://insee.com.vn/vi" target="_blank"><img width="100%" src="./images/image004.png" /></a></div>
-               <div class="partnersLogoMod"><a href="https://www.autodesk.com/" target="_blank"><img width="100%" src="./images/image005.png" /></a></div>
-               <div class="partnersLogoMod"><a href="http://www.krislite.com/" target="_blank"><img width="100%" src="./images/image006.png" /></a></div>
-               <div class="partnersLogoMod"><a href="http://www.reecorp.com/" target="_blank"><img width="100%" src="./images/image007.png" /></a></div>
-               <div class="partnersLogoMod"><a href="https://www.jardines.com/en/global/home.html" target="_blank"><img width="100%" src="./images/image008.png" /></a></div>
-               <div class="partnersLogoMod"><a href="http://sunnyworldpro.com/" target="_blank"><img width="100%" src="./images/image009.png" /></a></div>
-               <div class="partnersLogoMod"><a href="http://www.jlt.com/" target="_blank"><img width="100%" src="./images/image010.png" /></a></div>
-               <div class="partnersLogoMod"><a href="http://www.cnqc.com.hk/en/" target="_blank"><img width="100%" src="./images/image011.png" /></a></div>
-               <div class="partnersLogoMod"><a href="http://www.arcplus.com.cn/en/" target="_blank"><img width="100%" src="./images/image012.png" /></a></div>
-               <div class="partnersLogoMod"><a href="http://www.bcd-intl.com/" target="_blank"><img width="100%" src="./images/image013.png" /></a></div>
-               <div class="partnersLogoMod"><a href="http://www.rsp.com.sg/home" target="_blank"><img width="100%" src="./images/image014.png" /></a></div>
-               <div class="partnersLogoMod"><a href="http://www.dpa.com.sg/" target="_blank"><img width="100%" src="./images/image015.png" /></a></div>
-               <div class="partnersLogoMod"><a href="https://www.benoy.com/" target="_blank"><img width="100%" src="./images/image016.png" /></a></div>
-               <div class="partnersLogoMod"><a href="https://www.sbi.international/" target="_blank"><img width="100%" src="./images/image017.png" /></a></div>
-               <div class="partnersLogoMod"><a href="http://www.goldmantis.com/jtl2013/cn/index.asp" target="_blank"><img width="100%" src="./images/image018.png" /></a></div>
-               <div class="partnersLogoMod"><a href="http://www.tofu-ao.com/tofu/top.html" target="_blank"><img width="100%" src="./images/image019.png" /></a></div>
-               <div class="partnersLogoMod"><a href="http://english.cscec.com/" target="_blank"><img width="100%" src="./images/image020.png" /></a></div>
-               <div class="partnersLogoMod"><a href="http://www.sugar-hk.com/" target="_blank"><img width="100%" src="./images/image021.png" /></a></div>
-               <div class="partnersLogoMod"><a href="http://m.gdwm.cn/en/index.asp" target="_blank"><img width="100%" src="./images/image022.png" /></a></div>
-             </div>
-           </div>
-           <div class="partnersLogo2">
-             <div class="partnersLogo clear">
-               <div class="partnersLogoMod2">
-                 <div class="partnersLogoMod"><a href="http://www.csgglass.com/" target="_blank"><img width="100%" src="./images/image001.png" /></a></div>
-                 <div class="partnersLogoMod"><a href="https://www.schindler.com/com/internet/en/home.html" target="_blank"><img width="100%" src="./images/image002.png" /></a></div>
-               </div>
-               <div class="partnersLogoMod2">
-                 <div class="partnersLogoMod"><a href="http://insee.com.vn/vi" target="_blank"><img width="100%" src="./images/image004.png" /></a></div>
-                 <div class="partnersLogoMod"><a href="https://www.autodesk.com/" target="_blank"><img width="100%" src="./images/image005.png" /></a></div>
-               </div>
-               <div class="partnersLogoMod2">
-                 <div class="partnersLogoMod"><a href="http://www.krislite.com/" target="_blank"><img width="100%" src="./images/image006.png" /></a></div>
-                 <div class="partnersLogoMod"><a href="http://www.reecorp.com/" target="_blank"><img width="100%" src="./images/image007.png" /></a></div>
-               </div>
-               <div class="partnersLogoMod2">
-                 <div class="partnersLogoMod"><a href="https://www.jardines.com/en/global/home.html" target="_blank"><img width="100%" src="./images/image008.png" /></a></div>
-                 <div class="partnersLogoMod"><a href="http://sunnyworldpro.com/" target="_blank"><img width="100%" src="./images/image009.png" /></a></div>
-               </div>
-               <div class="partnersLogoMod2">
-                 <div class="partnersLogoMod"><a href="http://www.jlt.com/" target="_blank"><img width="100%" src="./images/image010.png" /></a></div>
-                 <div class="partnersLogoMod"><a href="http://www.cnqc.com.hk/en/" target="_blank"><img width="100%" src="./images/image011.png" /></a></div>
-               </div>
-               <div class="partnersLogoMod2">
-                 <div class="partnersLogoMod"><a href="http://www.arcplus.com.cn/en/" target="_blank"><img width="100%" src="./images/image012.png" /></a></div>
-                 <div class="partnersLogoMod"><a href="http://www.bcd-intl.com/" target="_blank"><img width="100%" src="./images/image013.png" /></a></div>
-               </div>
-               <div class="partnersLogoMod2">
-                 <div class="partnersLogoMod"><a href="http://www.rsp.com.sg/home" target="_blank"><img width="100%" src="./images/image014.png" /></a></div>
-                 <div class="partnersLogoMod"><a href="http://www.dpa.com.sg/" target="_blank"><img width="100%" src="./images/image015.png" /></a></div>
-               </div>
-               <div class="partnersLogoMod2">
-                 <div class="partnersLogoMod"><a href="https://www.benoy.com/" target="_blank"><img width="100%" src="./images/image016.png" /></a></div>
-                 <div class="partnersLogoMod"><a href="https://www.sbi.international/" target="_blank"><img width="100%" src="./images/image017.png" /></a></div>
-               </div>
-               <div class="partnersLogoMod2">
-                 <div class="partnersLogoMod"><a href="http://www.goldmantis.com/jtl2013/cn/index.asp" target="_blank"><img width="100%" src="./images/image018.png" /></a></div>
-                 <div class="partnersLogoMod"><a href="http://www.tofu-ao.com/tofu/top.html" target="_blank"><img width="100%" src="./images/image019.png" /></a></div>
-               </div>
-               <div class="partnersLogoMod2">
-                 <div class="partnersLogoMod"><a href="http://english.cscec.com/" target="_blank"><img width="100%" src="./images/image020.png" /></a></div>
-                 <div class="partnersLogoMod"><a href="http://www.sugar-hk.com/" target="_blank"><img width="100%" src="./images/image021.png" /></a></div>
-               </div>
-               <div class="partnersLogoMod2">
-                 <div class="partnersLogoMod"><a href="http://m.gdwm.cn/en/index.asp" target="_blank"><img width="100%" src="./images/image022.png" /></a></div>
-                 <div class="partnersLogoMod"></div>
-               </div>
-             </div>
-           </div>
-           <div class="partnersLogoBg"></div>
-         </div>
-         <p class="pushMail">For further information</p>
-         <a id="explore" class="explore"><span>Contact us</span></a>
-       </div>
-       <div id="contactUs">
-         <h4>YOUR INFORMATION</h4>
-         <div class="eMailMod">
-           <input class="fillIn" type="text" placeholder="Name" data-type="name" />
-           <input class="fillIn" type="text" placeholder="Email" data-type="email" />
-           <input class="fillIn" type="text" placeholder="Phone" data-type="mobile" />
-           <textarea class="fillIn" type="text" rows="6" data-type="note" placeholder="Note"></textarea>
-           <a id="sendContact">SEND</a>
-         </div>
-       </div>
-     </div>
-     <div id="page_5" class="section">
-       <video src="https://s3-ap-southeast-1.amazonaws.com/alphaking/akr_page/video/video.mp4" id="videoScroll" width="100%" controls webkit-playsinline playsinline x5-playsinline>
-       您的浏览器暂不支持视频播放
-       </video>
-     </div>
-     <div id="page_6" class="section">
-        <h4>NEWS</h4>
-        <div class="newsCenter clear">
-          <div class="newsMod">
-            <div id="newsList" class="newsList">
-              
-            </div>
-            <div class="controlSlick">
-              <a class="slickPrev" onclick="$('#newsList').slick('slickPrev')"><img src="./images/newsPrev.png" /></a>
-              <a class="slickNext" onclick="$('#newsList').slick('slickNext')"><img src="./images/newsNext.png" /></a>
-            </div>
+  <div id="app1">
+  </div>
+  <div id="app">
+    <div>
+      <nav>
+        <div id="menu" class="menuBox in">
+          <div class="phoneMenuBtn clear">
+            <button id="navbarBtn" _ngcontent-c2="" aria-controls="navbar" aria-expanded="false" class="navbar-toggle collapsed" data-target="#navBox" data-toggle="collapse" type="button">
+              <span _ngcontent-c2="" class="sr-only">Toggle navigation</span>
+              <span _ngcontent-c2="" class="icon-bar"></span>
+              <span _ngcontent-c2="" class="icon-bar"></span>
+              <span _ngcontent-c2="" class="icon-bar"></span>
+            </button>
+            <div class="phonelogoImg"><img src="./images/apk_logo.png" /></div>
           </div>
-          <div class="calendarBox">
-            <div class="calendarDay">
-              <div class="calendarDayHead">
-                <div id="calendarMonth" class="calendarMonth"></div>
-                <div class="calendarDate clear">
-                  <span>S</span>
-                  <span>M</span>
-                  <span>T</span>
-                  <span>W</span>
-                  <span>T</span>
-                  <span>F</span>
-                  <span>S</span>
+          <div id="navBox" class="collapse">
+            <div data-menuanchor="home" class="menuMod active"><a href="#home">HOME</a></div>
+            <div data-menuanchor="about" class="menuMod"><a href="#about">ABOUT US</a></div>
+            <div data-menuanchor="meet" class="menuMod"><a href="#meet">MEET OUR CREATORS</a></div>
+            <div class="logoImg"><img width="60%"  src="./images/apk_logo.png" /></div>
+            <div data-menuanchor="our" class="menuMod"><a href="#our">OUR PARTNERS</a></div>
+            <div data-menuanchor="projects" class="menuMod"><a href="#projects">PROJECTS</a></div>
+            <div data-menuanchor="news" class="menuMod"><a href="#news">NEWS</a></div>
+            <div><span @click="switchLn(en)">en</span></div>
+            <div><span @click="switchLn(vn)">vn</span></div>
+          </div>
+       </div>
+      </nav>
+        <div id="fullPage" >
+         <div id="page_1" class="section">
+           <div class="pageCenter pageFlash">
+             <div class="pageMod_1">
+               <h2 class="headText">Transform{{ln.page1_text1}}</h2>
+               <h3 class="pageText">The city skyline</h3>
+               <a class="explore" href="#about"><span>Explore</span></a>
+             </div>
+             <div class="pageMod_2">
+               <p>The city skyline is about to transform. Stay tuned ! </p>
+             </div>
+           </div>
+         </div>
+         <div id="page_2" class="section">
+            <div class="pageCenter"></div>
+             <div id="video"></div>
+             <div style="position:absolute;left:0;top:0; width:100%; height:100%;"></div>
+         </div>
+         <div id="page_3" class="section">
+           <div class="pageCenter">
+             <h2 class="headText">MEET OUR CREATORS</h2>
+             <h4 class="pageText">We are a group of real estate experts that share the common passion of doing impossible things. Never compromising on any detail, we are dedicated to creating world-impacted properties. Building the future with our own hands.</h4>
+             <div class="leaderList clear">
+               <div class="leaderMod">
+                 <div class="flip-container" flip-name="Jimmy">
+                   <a class="flipper">
+                     <span class="front"><img width="100%" src="./images/Jimmy.png"></span>
+                   </a>
+                 </div>
+                 <p class="leaderName">Jimmy Chan</p>
+                 <p class="leaderTitle">CEO</p>
+               </div>
+               <div class="leaderMod">
+                 <div class="flip-container" flip-name="Wong">
+                   <a class="flipper">
+                     <span class="front"><img width="100%" src="./images/Wong.png"></span>
+                   </a>
+                 </div>
+                 <p class="leaderName">Simon Wong</p>
+                 <p class="leaderTitle">Deputy CEO</p>
+               </div>
+               <div class="leaderMod">
+                 <div class="flip-container" flip-name="EricChan">
+                   <a class="flipper">
+                     <span class="front"><img width="100%" src="./images/EricChan.png"></span>
+                   </a>
+                 </div>
+                 <p class="leaderName">Eric Chan</p>
+                 <p class="leaderTitle">CFO</p>
+               </div>
+               <div class="leaderMod">
+                 <div class="flip-container" flip-name="PeterLee">
+                   <a class="flipper">
+                     <span class="front"><img width="100%" src="./images/PeterLee.png"></span>
+                   </a>
+                 </div>
+                 <p class="leaderName">Peter Lee</p>
+                 <p class="leaderTitle">CEO Property & Assets Management</p>
+               </div>
+               <div class="leaderMod">
+                 <div class="flip-container" flip-name="Cheung">
+                   <a class="flipper">
+                     <span class="front"><img width="100%" src="./images/Cheung.png" /></span>
+                   </a>
+                 </div>
+                 <p class="leaderName">Richard Cheung</p>
+                 <p class="leaderTitle">Project General Manager</p>
+               </div>
+               <div class="leaderMod">
+                 <div class="flip-container" flip-name="Xie">
+                   <a class="flipper">
+                     <span class="front"><img width="100%" src="./images/Xie.png" /></span>
+                   </a>
+                 </div>
+                 <p class="leaderName">Emily Xie</p>
+                 <p class="leaderTitle">General Manager Design Management</p>
+               </div>
+               <div class="leaderMod">
+                 <div class="flip-container" flip-name="Edward">
+                   <a class="flipper">
+                     <span class="front"><img width="100%" src="./images/Edward.png" /></span>
+                   </a>
+                 </div>
+                 <p class="leaderName">Edward Coleman</p>
+                 <p class="leaderTitle">Program & QC Director</p>
+               </div>
+               <div class="leaderMod">
+                 <div class="flip-container" flip-name="Samson">
+                   <a class="flipper">
+                     <span class="front"><img width="100%" src="./images/Samson.png" /></span>
+                   </a>
+                 </div>
+                 <p class="leaderName">Samson Ngov</p>
+                 <p class="leaderTitle">Design Management Director</p>
+               </div>
+               <div class="leaderMod">
+                 <div class="flip-container" flip-name="An">
+                   <a class="flipper">
+                     <span class="front"><img width="100%" src="./images/An.png" /></span>
+                   </a>
+                 </div>
+                 <p class="leaderName">An Ngo</p>
+                 <p class="leaderTitle">Business Development Director</p>
+               </div>
+               <div class="leaderMod">
+                 <div class="flip-container" flip-name="Kevin">
+                   <a class="flipper">
+                     <span class="front"><img width="100%" src="./images/Kevin.png" /></span>
+                   </a>
+                 </div>
+                 <p class="leaderName">Kevin Xu</p>
+                 <p class="leaderTitle">Project Integration Solutions Director</p>
+               </div>
+               <div class="leaderMod">
+                 <div class="flip-container" flip-name="Aurelio">
+                   <a class="flipper">
+                     <span class="front"><img width="100%" src="./images/Aurelio.png" /></span>
+                   </a>
+                 </div>
+                 <p class="leaderName">Aurelio Doetsch</p>
+                 <p class="leaderTitle">Project Director</p>
+               </div>
+               <div class="leaderMod">
+                 <div class="flip-container" flip-name="Tzuyin">
+                   <a class="flipper">
+                     <span class="front"><img width="100%" src="./images/Tzuyin.png" /></span>
+                   </a>
+                 </div>
+                 <p class="leaderName">Tzu-Yin Lu</p>
+                 <p class="leaderTitle">Interior Design Director</p>
+               </div>
+               <div class="leaderMod">
+                 <div class="flip-container" flip-name="Raymond">
+                   <a class="flipper">
+                     <span class="front"><img width="100%" src="./images/Raymond.png" /></span>
+                   </a>
+                 </div>
+                 <p class="leaderName">Raymond Yang</p>
+                 <p class="leaderTitle">Business Relations Director</p>
+               </div>
+               <div class="leaderMod">
+                 <div class="flip-container" flip-name="Jenny">
+                   <a class="flipper">
+                     <span class="front"><img width="100%" src="./images/Jenny.png" /></span>
+                   </a>
+                 </div>
+                 <p class="leaderName">Jenny Nguyen</p>
+                 <p class="leaderTitle">Sales Director</p>
+               </div>
+               <div class="leaderMod">
+                 <div class="flip-container" flip-name="Hien">
+                   <a class="flipper">
+                     <span class="front"><img width="100%" src="./images/Hien.png" /></span>
+                   </a>
+                 </div>
+                 <p class="leaderName">Hien Do</p>
+                 <p class="leaderTitle">Marketing Director</p>
+               </div>
+               <div class="leaderMod">
+                 <div class="flip-container" flip-name="William">
+                   <a class="flipper">
+                     <span class="front"><img width="100%" src="./images/William.png" /></span>
+                   </a>
+                 </div>
+                 <p class="leaderName">Will Hoc Nhan</p>
+                 <p class="leaderTitle">Commercial Assets Director</p>
+               </div>
+               <div class="leaderMod">
+                 <div class="flip-container" flip-name="Chu">
+                   <a class="flipper">
+                     <span class="front"><img width="100%" src="./images/Chu.png" /></span>
+                   </a>
+                 </div>
+                 <p class="leaderName">Marcel Chu</p>
+                 <p class="leaderTitle">International Marketing Director</p>
+               </div>
+               <div class="leaderMod">
+                 <div class="flip-container" flip-name="HaoChen">
+                   <a class="flipper">
+                     <span class="front"><img width="100%" src="./images/HaoChen.png" /></span>
+                   </a>
+                 </div>
+                 <p class="leaderName">Hao Chen</p>
+                 <p class="leaderTitle">IT Director</p>
+               </div>
+               <div class="leaderMod">
+                 <div class="flip-container" flip-name="YuHua">
+                   <a class="flipper">
+                     <span class="front"><img width="100%" src="./images/YuHua.png" /></span>
+                   </a>
+                 </div>
+                 <p class="leaderName">Wei Yu Hua</p>
+                 <p class="leaderTitle">Design Director</p>
+               </div>
+               <div class="leaderMod">
+                 <div class="flip-container" flip-name="Hui">
+                   <a class="flipper">
+                     <span class="front"><img width="100%" src="./images/Hui.png" /></span>
+                   </a>
+                 </div>
+                 <p class="leaderName">Zhao Hui</p>
+                 <p class="leaderTitle">Architect Director</p>
+               </div>
+             </div>
+           </div>
+           <div id="memberBox" class="memberBox">
+             <a class="closeBtn" onclick="alpha.memberPopup.closePop()">[X]</a>
+             <img class="memberPic" src="./images/EricChan.png" />
+             <div class="textBox">
+               <h4 class="memberName"></h4>
+               <h5 class="memberTitle"></h5>
+               <p class="memberDetail"></p>
+             </div>
+           </div>
+         </div>
+         <div id="page_4" class="section">
+           <div class="pageCenter">
+             <h2 class="headText">OUR PARTNERS</h2>
+             <h4 class="pageText">These corporates have partnered with us to find innovative ways to transform the city skyline. Alpha King gratefully acknowledges them for their continued support.</h4>
+             <div class="ourPartnersList">
+               <div class="partnersLogo1">
+                 <div class="partnersLogo clear">
+                   <div class="partnersLogoMod"><a href="http://www.csgglass.com/" target="_blank"><img width="100%" src="./images/image001.png" /></a></div>
+                   <div class="partnersLogoMod"><a href="https://www.schindler.com/com/internet/en/home.html" target="_blank"><img width="100%" src="./images/image002.png" /></a></div>
+                  <div class="partnersLogoMod"><a href="http://insee.com.vn/vi" target="_blank"><img width="100%" src="./images/image004.png" /></a></div>
+                   <div class="partnersLogoMod"><a href="https://www.autodesk.com/" target="_blank"><img width="100%" src="./images/image005.png" /></a></div>
+                   <div class="partnersLogoMod"><a href="http://www.krislite.com/" target="_blank"><img width="100%" src="./images/image006.png" /></a></div>
+                   <div class="partnersLogoMod"><a href="http://www.reecorp.com/" target="_blank"><img width="100%" src="./images/image007.png" /></a></div>
+                   <div class="partnersLogoMod"><a href="https://www.jardines.com/en/global/home.html" target="_blank"><img width="100%" src="./images/image008.png" /></a></div>
+                   <div class="partnersLogoMod"><a href="http://sunnyworldpro.com/" target="_blank"><img width="100%" src="./images/image009.png" /></a></div>
+                   <div class="partnersLogoMod"><a href="http://www.jlt.com/" target="_blank"><img width="100%" src="./images/image010.png" /></a></div>
+                   <div class="partnersLogoMod"><a href="http://www.cnqc.com.hk/en/" target="_blank"><img width="100%" src="./images/image011.png" /></a></div>
+                   <div class="partnersLogoMod"><a href="http://www.arcplus.com.cn/en/" target="_blank"><img width="100%" src="./images/image012.png" /></a></div>
+                   <div class="partnersLogoMod"><a href="http://www.bcd-intl.com/" target="_blank"><img width="100%" src="./images/image013.png" /></a></div>
+                   <div class="partnersLogoMod"><a href="http://www.rsp.com.sg/home" target="_blank"><img width="100%" src="./images/image014.png" /></a></div>
+                   <div class="partnersLogoMod"><a href="http://www.dpa.com.sg/" target="_blank"><img width="100%" src="./images/image015.png" /></a></div>
+                   <div class="partnersLogoMod"><a href="https://www.benoy.com/" target="_blank"><img width="100%" src="./images/image016.png" /></a></div>
+                   <div class="partnersLogoMod"><a href="https://www.sbi.international/" target="_blank"><img width="100%" src="./images/image017.png" /></a></div>
+                   <div class="partnersLogoMod"><a href="http://www.goldmantis.com/jtl2013/cn/index.asp" target="_blank"><img width="100%" src="./images/image018.png" /></a></div>
+                   <div class="partnersLogoMod"><a href="http://www.tofu-ao.com/tofu/top.html" target="_blank"><img width="100%" src="./images/image019.png" /></a></div>
+                   <div class="partnersLogoMod"><a href="http://english.cscec.com/" target="_blank"><img width="100%" src="./images/image020.png" /></a></div>
+                   <div class="partnersLogoMod"><a href="http://www.sugar-hk.com/" target="_blank"><img width="100%" src="./images/image021.png" /></a></div>
+                   <div class="partnersLogoMod"><a href="http://m.gdwm.cn/en/index.asp" target="_blank"><img width="100%" src="./images/image022.png" /></a></div>
+                 </div>
+               </div>
+               <div class="partnersLogo2">
+                 <div class="partnersLogo clear">
+                   <div class="partnersLogoMod2">
+                    <div class="partnersLogoMod">
+                      <a href="http://www.arcplus.com.cn/en/" target="_blank" data-details="Arcplus Group PLC (hereinafter referred to as “Arcplus”) is a service provider offering comprehensive solutions for urban development. With a history of over 65 years, Arcplus has grown into an integrated engineering group with more than 15 subsidiary firms and studios working on architecture design and engineering consulting. For over 10 consecutive years, Arcplus has been ranked by the US magazine ‘Engineering News Record’ (ENR) as one of “The Top 150 Global Design Firms”. In 2014, Arcplus acquired Wilson Associates, the famous American interior design company."><img width="100%" src="./images/image001.png" /></a>
+                    </div>
+                    <div class="partnersLogoMod">
+                      <a href="https://home.kpmg.com/xx/en/home.html" target="_blank" data-details="KPMG is a professional service company and one of the Big Four auditors, along with Deloitte, Ernst & Young (EY), and PricewaterhouseCoopers (PwC).
+                      Seated in Amstelveen, the Netherlands, KPMG employs 189,000 people[5] and has three lines of services: financial audit, tax, and advisory. Its tax and advisory services are further divided into various service groups."><img width="100%" src="./images/image005.png" /></a>
+                    </div>
+                   </div>
+                   <div class="partnersLogoMod2">
+                     <div class="partnersLogoMod">
+                        <a href="http://www.jardines.com/" target="_blank" data-details="Jardine Matheson is a diversified Asian-based group with unsurpassed experience in the region, having been founded in China in 1832. We comprise a broad portfolio of market-leading businesses, which represent a combination of cash generating activities and long-term property assets that are closely aligned to the increasingly prosperous consumers of the region."><img width="100%" src="./images/image002.png" /></a>
+                      </div>
+                     <div class="partnersLogoMod">
+                        <a href="http://tbwa.com/" target="_blank" data-details="TBWA is consistently ranked among the top 10 global advertising agencies worldwide, we have been recognized with top honors from every major creative award show, including Cannes Lions, Clios, D&AD, Effies, Webbys and the EMMY awards."><img width="100%" src="./images/image006.png" /></a>
+                      </div>
+                   </div>
+                   <div class="partnersLogoMod2">
+                     <div class="partnersLogoMod">
+                        <a href="http://english.cscec.com/" target="_blank" data-details="China Construction Group Company (CSCEC), formally established in 1982, focused the professional development of China's market, did the earliest and highest level of integration.
+                      CSCEC has expended the business to all over the world, and finished hundreds of iconic buildings at different coumainly carries out management activities on the platform of China Construction Limited by Share Ltd (stock abbreviation: Chinese architecture, stock code 601668.SH), and has 7 listed companies and 100 tier two controlling companies."><img width="100%" src="./images/image003.png" /></a>
+                    </div>
+                     <div class="partnersLogoMod">
+                        <a href="http://www.goldmantis.com/jtl2013/en/home.asp" target="_blank" data-details='With headquarter in Suzhou, China, Gold Mantis was founded in 1993. After over 20 years of development, it has grown into a modernized corporate group with " decoration industry as the main body with e-business and finance as its two wings". With over 100 branch companies both domestic and overseas and over 18,000 employees, the Group is a frontier in green, environmental and healthy public and home decoration industry.'><img width="100%" src="./images/image007.png" /></a>
+                    </div>
+                   </div>
+                   <div class="partnersLogoMod2">
+                     <div class="partnersLogoMod">
+                        <a href="http://www.scg.com.cn/en/index.html" target="_blank" data-details="Shanghai Construction Group (SCG), which has been undertaking many important tasks in the building and modernization of China’s cities, is the flagship of China’s building industry. SCG possesses core technologies in the construction of highrise buildings, large bridges, light railways, public culture & sport facilities, large industrial plants, major environment protection projects & etc. SCG has also completed over 100 landmark projects in more than 30 overseas countries and regions."><img width="100%" src="./images/image004.png" /></a>
+                      </div>
+                     <div class="partnersLogoMod">
+                        <a href="http://www.csgglass.com/eng/index.asp" target="_blank" data-details="Dongguan CSG Solar Glass Co., Ltd, a subsidiary company of CSG holding, was established in October, 2005 with a total investment of 600 million RMB.
+                        The company now has a daily melting capacity of 500 tons and annual deep processing capacity of 12,000,000 SQM, which could provide glass for manufacturing 160MW solar modules per month. Our main facilities, imported from Europe with internationally advanced level, lay a mechanical foundation for manufacturing high quality solar glass. 
+                        We have an integrated R&D system and establish a solar glass R&D center, which could keep CSG in the lead in the solar glass filed all over the world."><img width="100%" src="./images/image008.png" /></a>
+                      </div>
+                   </div>
+                   <div class="partnersLogoMod2">
+                     <div class="partnersLogoMod">
+                        <a href="http://m.gdwm.cn/en/index.asp" target="_blank" data-details="Marco Polo was estiblished in 1996, since that time the company is one of the biggest leading tile companies. The current products cover all categories of matt bricks, polished tiles, polished glazed tiles, interior wall tiles, microcrystalline stones, and hand-carved tiles. The company has applied for more than 800 patents."><img width="100%" src="./images/image009.png" /></a>
+                    </div>
+                     <div class="partnersLogoMod">
+                        <a href="http://www.cnqc.com.hk/en" target="_blank" data-details="CNQC International Holdings Limite is listed on the mainboard of Hong Kong Stock Exchange with major businesses in real estate, construction, and lifestyle smart home/smart communities application etc. Our current market covers Hong Kong, Macau, Singapore, Indonesia, Malaysia, Vietnam and Myanmar etc. Our wholly-owned subsidiary Qingjian (South Pacific) Holdings Pte., Ltd is a renowned property developer and contractor and its subsidiary, Qingjian Realty (South Pacific) Group Pte Ltd has been recognised as one of the Top Ten Developers in Singapore for years."><img width="100%" src="./images/image013.png" /></a>
+                    </div>
+                   </div>
+                   <div class="partnersLogoMod2">
+                     <div class="partnersLogoMod">
+                      <a href="https://www.autodesk.com/" target="_blank" data-details="Autodesk makes software for people who make things. If you’ve ever driven a high-performance car, admired a towering skyscraper, used a smartphone, or watched a great film, chances are you’ve experienced what millions of Autodesk customers are doing with our software."><img width="100%" src="./images/image010.png" /></a>
+                    </div>
+                     <div class="partnersLogoMod"><a href="http://www.rsp.com.sg/home" target="_blank" data-details="RSP Architects Planners & Engineers is one of the most established architectural practices in Singapore and the region. For over 60 years, we have delivered innovative and sustainable design solutions for a wide range of developments through our multidisciplinary expertise in town and master planning, urban design, architecture, engineering and interior design. Our focus is designing built environments that enrich and transform people’s lives."><img width="100%" src="./images/image014.png" /></a></div>
+                   </div>
+                   <div class="partnersLogoMod2">
+                     <div class="partnersLogoMod"><a href="https://www.schindler.com/com/internet/en/home.html" target="_blank" data-details="Schindler was founded in 1874 in Lucerne, Switzerland, and is one of the world’s leading providers of elevators, escalators, and moving walks, as well as maintenance and modernization services. The Group has over 1 000 branch offices in more than 100 countries, as well as production sites and research and development facilities in the US, Brazil, Europe, China, and India."><img width="100%" src="./images/image011.png" /></a></div>
+                     <div class="partnersLogoMod">
+                        <a href="http://www.dpa.com.sg/" target="_blank" data-details="DPA is a home-grown architectural practice evolving in tandem with the building of nationhood since the independence of Singapore. Founded in 1967 with a deep concern for the built environment and the need to create architecture of excellence, it aims to enrich the human experience and spirit through its planning and architectural works.
+                      Growing from a single office of a dozen to 1,200 strong in fifteen offices worldwide, we have generated many significant projects over more than 40 years of continued operation; yet the process of critical self-renewal remains in our culture as we seek to stay meaningfully relevant to the society we serve. Through a strong commitment to design excellence, we aspire to make our mark on the global stage by making significant contributions to the field of architecture and to the design environment, with the aim to improve the quality of life of the people who enjoy our work."><img width="100%" src="./images/image015.png" /></a>
+                    </div>
+                   </div>
+                   <div class="partnersLogoMod2">
+                     <div class="partnersLogoMod"><a href="http://www.reecorp.com/" target="_blank" data-details="Established since 1977, Refrigeration Electrical Engineering Corporation (REE) today is a publicly-traded diversified business group operating in the primary fields of mechanical and electrical engineering services (M&E); manufacturing, assembling and sales of Reetech air-conditioner systems; real estate development and management; and power & water utility infrastructures."><img width="100%" src="./images/image012.png" /></a></div>
+                     <div class="partnersLogoMod"><a href="http://meinhardt.com.vn/" target="_blank" data-details="The Company has been granted a full licence of engineering consultancy under 100% Foreign Owned Company status and has been admitted as a member of Vietnam Engineering Consultant Association (VECAS). Representative offices are established in Hanoi and Danang to execute projects in the north of the country."><img width="100%" src="./images/image016.png" /></a></div>
+                   </div>
+                   <div class="partnersLogoMod2">
+                     <div class="partnersLogoMod"><a href="http://www.jlt.com/" target="_blank" data-details=""><img width="100%" src="./images/image017.png" /></a></div>
+                     <div class="partnersLogoMod"><a href="http://www.lj-asia.com/" target="_blank" data-details=""><img width="100%" src="./images/image021.png" /></a></div>
+                   </div>
+                   <div class="partnersLogoMod2">
+                     <div class="partnersLogoMod"><a href="http://insee.com.vn/vi" target="_blank" data-details=""><img width="100%" src="./images/image018.png" /></a></div>
+                     <div class="partnersLogoMod"><a href="https://www.benoy.com/" target="_blank" data-details=""><img width="100%" src="./images/image022.png" /></a></div>
+                   </div>
+                   <div class="partnersLogoMod2">
+                     <div class="partnersLogoMod"><a href="https://www.armani.com/casa/en/" target="_blank" data-details=""><img width="100%" src="./images/image019.png" /></a></div>
+                     <div class="partnersLogoMod"><a href="https://www.arcadis.com/en/global/" target="_blank" data-details=""><img width="100%" src="./images/image023.png" /></a></div>
+                   </div>
+                   <div class="partnersLogoMod2">
+                     <div class="partnersLogoMod"><a href="http://www.kannfinch.com/" target="_blank" data-details=""><img width="100%" src="./images/image020.png" /></a></div>
+                     <div class="partnersLogoMod"><a href="http://www.indoeng.com/" target="_blank" data-details=""><img width="100%" src="./images/image024.png" /></a></div>
+                   </div>
+                   <div class="partnersLogoMod2">
+                     <div class="partnersLogoMod"><a href="http://www.bcd-intl.com/" target="_blank" data-details=""><img width="100%" src="./images/image025.png" /></a></div>
+                     <div class="partnersLogoMod"><a href="http://www.architectus.com.au/" target="_blank" data-details=""><img width="100%" src="./images/image029.png" /></a></div>
+                   </div>
+                   <div class="partnersLogoMod2">
+                     <div class="partnersLogoMod"><a href="https://www.aurecongroup.com/" target="_blank" data-details=""><img width="100%" src="./images/image026.png" /></a></div>
+                     <div class="partnersLogoMod"><a href="https://inhabitgroup.com/" target="_blank" data-details=""><img width="100%" src="./images/image030.png" /></a></div>
+                   </div>
+                   <div class="partnersLogoMod2">
+                     <div class="partnersLogoMod"><a href="http://rlb.com/en/" target="_blank" data-details=""><img width="100%" src="./images/image027.png" /></a></div>
+                     <div class="partnersLogoMod"><a href="https://www.sbi.international/" target="_blank" data-details=""><img width="100%" src="./images/image031.png" /></a></div>
+                   </div>
+                   <div class="partnersLogoMod2">
+                     <div class="partnersLogoMod"><a href="http://www.thorntontomasetti.com/" target="_blank" data-details=""><img width="100%" src="./images/image028.png" /></a></div>
+                     <div class="partnersLogoMod"><a href="https://www.archetype-group.com/" target="_blank" data-details=""><img width="100%" src="./images/image032.png" /></a></div>
+                   </div>
+                   <div class="partnersLogoMod2">
+                     <div class="partnersLogoMod"><a href="https://www.sugar-hk.com/" target="_blank" data-details=""><img width="100%" src="./images/image033.png" /></a></div>
+                     <div class="partnersLogoMod"><a href="http://www.abundancefire.com.cn/" target="_blank" data-details=""><img width="100%" src="./images/image034.png" /></a></div>
+                   </div>
+                   <div class="partnersLogoMod2">
+                     <div class="partnersLogoMod"><a href="http://www.krislite.com/" target="_blank" data-details=""><img width="100%" src="./images/image035.png" /></a></div>
+                     <div class="partnersLogoMod"></div>
+                   </div>
+                 </div>
+               </div>
+               <div class="partnersLogoBg"></div>
+             </div>
+           </div>
+           <p class="pushMail">For further information</p>
+           <div style="text-align:center;"><a id="explore" class="explore"><span>Contact us</span></a></div>
+            <div id="detailsBox" class="detailsBox">
+              <p></p>
+              <a target="_blank"></a>
+            </div>
+           <div id="contactUs">
+             <h4>EXPERIENCE OUR GREAT VISION</h4>
+             <p>To know more about our projects and contact in person with our team memeber, please submit below form with your information.</p>
+             <p>Together, we will transform the city skyline.</p>
+             <div class="eMailMod">
+               <input class="fillIn" type="text" placeholder="Name" data-type="name" />
+               <input class="fillIn" type="text" placeholder="Email" data-type="email" />
+               <input class="fillIn" type="text" placeholder="Phone" data-type="mobile" />
+               <textarea class="fillIn" type="text" rows="6" data-type="note" placeholder="Note"></textarea>
+               <a id="sendContact">SEND</a>
+             </div>
+           </div>
+          </div>
+         <div id="page_5" class="section">
+           <video src="https://s3-ap-southeast-1.amazonaws.com/alphaking/akr_page/video/video.mp4" id="videoScroll" width="100%" controls webkit-playsinline playsinline x5-playsinline>
+           您的浏览器暂不支持视频播放
+           </video>
+         </div>
+         <div id="page_6" class="section">
+            <h4>NEWS</h4>
+            <div class="newsCenter clear">
+              <div class="newsMod">
+                <div id="newsList" class="newsList">
+                  
+                </div>
+                <div class="controlSlick">
+                  <a class="slickPrev" onclick="$('#newsList').slick('slickPrev')"><img src="./images/newsPrev.png" /></a>
+                  <a class="slickNext" onclick="$('#newsList').slick('slickNext')"><img src="./images/newsNext.png" /></a>
                 </div>
               </div>
-              <div id="calendarDayBody" class="calendarDayBody clear">
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
-                <span><em></em></span>
+              <div class="calendarBox">
+                <div class="calendarDay">
+                  <div class="calendarDayHead">
+                    <div id="calendarMonth" class="calendarMonth"></div>
+                    <div class="calendarDate clear">
+                      <span>S</span>
+                      <span>M</span>
+                      <span>T</span>
+                      <span>W</span>
+                      <span>T</span>
+                      <span>F</span>
+                      <span>S</span>
+                    </div>
+                  </div>
+                  <div id="calendarDayBody" class="calendarDayBody clear">
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                    <span><em></em></span>
+                  </div>
+                </div>
+                <div id="calendarMonthList" class="calendarMonthList clear">
+                  <span data-m="1">Jan</span>
+                  <span data-m="2">Feb</span>
+                  <span data-m="3">Mar</span>
+                  <span data-m="4">Apr</span>
+                  <span data-m="5">May</span>
+                  <span data-m="6">Jun</span>
+                  <span data-m="7">Jul</span>
+                  <span data-m="8">Aug</span>
+                  <span data-m="9">Sept</span>
+                  <span data-m="10">Oct</span>
+                  <span data-m="11">Nov</span>
+                  <span data-m="12">Dec</span>
+                </div>
               </div>
             </div>
-            <div id="calendarMonthList" class="calendarMonthList clear">
-              <span data-m="1">Jan</span>
-              <span data-m="2">Feb</span>
-              <span data-m="3">Mar</span>
-              <span data-m="4">Apr</span>
-              <span data-m="5">May</span>
-              <span data-m="6">Jun</span>
-              <span data-m="7">Jul</span>
-              <span data-m="8">Aug</span>
-              <span data-m="9">Sept</span>
-              <span data-m="10">Oct</span>
-              <span data-m="11">Nov</span>
-              <span data-m="12">Dec</span>
-            </div>
-          </div>
-        </div>
-        <div id="textDetail" class="textDetail">
-          <div id="textDetailBody" class="textDetailBody">
-            <div id="textDetailCenter" class="textDetailCenter">
-              <header><img src="" width="100%" /></header>
-              <h2 class="textDetailTitle"></h2>
-              <div class="textDetailContent">
-                
+            <div id="textDetail" class="textDetail">
+              <div id="textDetailBody" class="textDetailBody">
+                <div id="textDetailCenter" class="textDetailCenter">
+                  <header><img src="" width="100%" /></header>
+                  <h2 class="textDetailTitle"></h2>
+                  <div class="textDetailContent">
+                    
+                  </div>
+                </div>
               </div>
+              <a id="textDetailClose" class="textDetailClose">&times;</a>
             </div>
-          </div>
-          <a id="textDetailClose" class="textDetailClose">&times;</a>
-        </div>
+         </div>
+       </div>
      </div>
    </div>
-    
 </body>
 </html>
 

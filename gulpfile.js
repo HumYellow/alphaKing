@@ -40,7 +40,7 @@ gulp.task('scripts', function() {
 });
  
 // 单独图片压缩
-gulp.task('images', function() { 
+gulp.task('images', function() {
   return gulp.src('src/images/**/*')
     .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
     .pipe(gulp.dest('dist/images'))
@@ -60,12 +60,12 @@ gulp.task('html',function(){
     .pipe(gulp.dest('dist'))
 })
 // 清理
-gulp.task('clean', function() { 
+gulp.task('clean', function() {
   return gulp.src(['dist/css', 'dist/js', 'dist/images'], {read: false})
     .pipe(clean());
 });
 // 开始打包任务
-gulp.task('default', ['clean'], function() { 
+gulp.task('build', ['clean'], function() { 
     gulp.start('html', 'images','font');
 });
  

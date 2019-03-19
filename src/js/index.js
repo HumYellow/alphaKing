@@ -59,6 +59,7 @@ var alpha = {
 		this.memberList();
 		this.contactUs();
 		this.news(this);
+		this.partnersOn();
 		$("body").on('touchmove',function(event){
 		  event.preventDefault();
 		});
@@ -363,30 +364,30 @@ var alpha = {
 				title: 'CEO',
 				detail:'As a man who laid the foundation of Shanghai Disneyland and the Peninsula Shanghai, Jimmy Chan brings more than 35 years of experience to Alpha King. His spirit is unstoppable and his vision is powerful. Thanks to that, he inspires the team to unlock all their energy and potential, creating the forces that will put the name Alpha King in the history books.'
 			},
-			Graham:{
-				name:'Graham Goldman',
-				title:'COO',
-				detail:'As one of the industries most experienced Major Contractors in Australia for over 35 years, Graham Goldman has successfully delivered complex and major projects in Australia, Canada, Fiji. At Alpha King Vietnam, his abundant knowledge and strong effective leadership will ensure our projects will be delivered to the highest quality and within the project timelines.'
+			Wong:{
+				name:'Simon Wong',
+				title: 'Deputy CEO',
+				detail:"Simon worked for New World and CTF Group for over 20 years. New World and CTF Group are one of the largest conglomerates in Asia Pacific region. As Regional CEO, he sucessfully delivered and operated commercial complex and mega sized projects over 4 millions m2.. Striving for excellence, he will ensure Alpha King's projects to deliver highest values to all stakeholders."
 			},
 			EricChan:{
 				name:'Eric Chan',
 				title:'CFO',
 				detail:'Taking on the role of CFO from Novaland and Masan Corporation, Eric Chan is a financial expert who honed his skills through 15 years in Cash management and Financial strategy. Each decision he makes regarding investment requires high precision and accurate forecasting, which keeps us stable, moving us forward into an emerging era with the ability to make great things happen.'
 			},
-			NicholasTan:{
-				name:'Nicholas Tan',
-				title:'Managing Director',
-				detail:'Nicholas Tan is known as the man of big progress, which empowered him to sit on the board of directors at CapitaLand Management Company & JVs in Vietnam and Indonesia. Spending over 2 decades in the industry, including 8 years in Vietnam, he knows exactly what people expect from his property projects. With a competitive mindset, he will lead Alpha King to sustainable growth and offer high-end experiences to our clients.'
+			PeterLee:{
+				name:'Peter Lee',
+				title: 'CEO Property & Assets Management',
+				detail:"Over 25 years experience in Senior Management level, member of Royal Insitutation of Chartered Surveyor, former Head of Shui On Land's Property and Assets Company, incharge whole China Xin Tin Di Projects, profolio over ten million square meters and 3000 staffs."
 			},
-			Marice:{
-				name:'Marice Verna',
-				title:'Principle Director',
-				detail:'Based in Australia, Maurice Verna is a registered Architect who dedicated over 37 years for Real Estate across Asia Pacific. Prior to joining Alpha King, he served as Managing Director of TVS Architect for the last 20 years.With a deep understanding about the commercial fundamentals associated with design sensibilities, he embraces the aesthetic standard of our projects.'
+			Cheung:{
+				name:'Richard Cheung',
+				title: 'Project General Manager',
+				detail:"Richard Cheung being over 38 years’ experience working in larger project on Hong Kong, China, Jakarta and Ho Chi Minh city. Including high-rise office, retail, residential five star hotel."
 			},
-			Lauren:{
-				name:'Lauren Atkins',
-				title:'Commercial & Contract Director',
-				detail:'Graduated with honors from QUT University Australia, Lauren Atkins is a member of the Australian Institute of Quantity Surveyor (AIQS). Aside from her journey at Eastview Queensland, she brings vast experiences in Property cost and Project management to Alpha King. A well-organized and disciplined person, she is definitely our “security guard”, who assures each project completed to the highest of standards.'
+			Xie:{
+				name:'Emily Xie',
+				title: 'General Manager Design Management',
+				detail:"Emily used to be the head of design for Shanghai Disney Park and Resort Project, and leaded the team to compose the first theme park code in China. Before joined Disney, she worked in SPG LAND for 6 years as Director of design department and Deputy General Manager of development department. With more than 20 years experiences in real estate and architecture field, sophisticated at multi-residential, mixed-use, educational facility, cultural and entertainment, historical building reuse. She holds Mater of administration and Master of urban design."
 			},
 			Kevin:{
 				name:'Kevin Xu',
@@ -428,11 +429,6 @@ var alpha = {
 				title:'Project Director',
 				detail:'An expert in the luxury market segment, Aurelio Doetsch possesses more than 30 years of Operational leadership and Project management from 4 different countries. As a progress-focused and result-oriented professional, he efficiently smoothens complex process and keeps Alpha King’s finger on the pulse of Real Estate market in Vietnam.'
 			},
-			Hang:{
-				name:'Hang Nguyen',
-				title:'Asset Management & Strategic Planning Director',
-				detail:'Having previously working as Project General Director at Gaw Capital, Hang Nguyen has directed her experiences towards Operation management and Financial modeling. Thanks to her excellent work ethic and robust analytical aptitude, she provides strategic levers of reliability and reputation for our projects.'
-			},
 			Tzuyin:{
 				name:'Tzu-Yin Lu',
 				title:'Interior Design Director',
@@ -443,27 +439,63 @@ var alpha = {
 				title:'Commercial Assets Director',
 				detail:'Prior to joining Alpha King, Will Hoc Nhan, CFA (Vietnamese native) was consultant from McKinsey’s Office in Vietnam with over 9 years of experience in Real Estate and Investment Banking. Some of his previous notable projects including developing Real Estate strategy for one of the largest retail players in Vietnam to achieve US$1bil NAV valuation in 5 years; analyzing key success factors and feasibility study for mega entertainment complex project in Vietnam with total investment of US$2.2 billion. As an enthusiastic & visionary person, Will Nhan has strong desire in building properties that changes the way people experience their life and work.'
 			},
-			Eric:{
-				name:'Eric Niborg',
-				title:'Principal Design Director',
-				detail:'Eric Niborg brings over 37 years in the design and construction of major capital projects, including international mixed-use and high-rise office, retail, residential, five-star hospitality and medical facilities. Here at Alpha King, his strength in management and leadership reinforces the production cycle of project formulation, procurement, design, and construction; advancing our quality and establishing our reputation.'
+			Chu:{
+				name:'Marcel Chu',
+				title:'International Marketing Director',
+				detail:'With over thirteen years of experience in the communications field, Marcel is a brand guardian for numbers of multinational companies, through providing a holistic array of marketing strategies and delivering seamlessly integrated brand solutions across Asia. Marcel was the Senior Vice President at Hill+Knowlton Strategies, specialized in consumer marketing and brand strategies before joining Alpha King.'
+			},
+			HaoChen:{
+				name:'Hao Chen',
+				title:'IT Director',
+				detail:"Chen Hao is a technolgy expert who has been working in internet industry and e-commerce field for more than ten years. Served as the CTO for an Internet company in China, he has successfully built up a strong platform provided e-commerce services to over 100 million users. With his rich experience, Chen Hao will build an e-commerce platform for Alpha King and make contributions to the construction of company's intelligent technology system."
+			},
+			YuHua:{
+				name:'Wei Yu Hua',
+				title:'Design Director',
+				detail:'Yu-Hua is an AIA member and LEEP certified professional and holds degrees for Master of Architecture and Master of Real Estate development. She has over 17 years of professional experience in real estate development industry in North America and Asia regions. With her comprehensive knowledge in real estate finance and development process, she has the track record of providing the world class projects as the lead of design team for internationally renowned developers.'
+			},
+			Hui:{
+				name:'Zhao Hui',
+				title:'Architect Director',
+				detail:'Former Senior Project Architect in Shanghai Disney Resort, Hui Zhao served as a Senior Lead Architect in Shanghai Disney Resort Post Turn Over Service Team for more than one year after grand opening. Before joined Disney, he worked at Hong Kong Huayi Designing Consultants Ltd. as Vice Manager of Designing Department / Director Architect. Qualified as Chinese Class 1 registered architect, Chinese class 1 registered architect examiner and Senior professional title with more than 19 years experiences in architecture design field.'
 			},
 			maybe:{
 				name:'',
 				title:'',
 				detail:''
 			}
-
 		}
 		$('.flip-container').on('click',function(){
 			var name = $(this).attr('flip-name');
+			console.info(name)
 			var json = memberJson[name];
+			console.info(json.name)
 			var src = './images/'+name+'.png'
 			$('#page_3 .memberPic').attr('src',src)
 			$('#page_3 .memberName').html(json.name)
 			$('#page_3 .memberTitle').html(json.title)
 			$('#page_3 .memberDetail').html(json.detail)
 			that.memberPopup.popop($('#memberBox'),$('#page_3'))
+		})
+	},
+	partnersOn:function(){
+		var that = this;
+		var isOpen = false;
+		$('.partnersLogo2 .partnersLogoMod a').on('mouseover',function(){
+			if(isOpen) return
+			var details = $(this).attr('data-details'),link = $(this).attr('href')
+			if(details == '')return
+				console.info($(this));
+				console.info(details);
+			$('#detailsBox p').html(details);
+			$('#detailsBox a').html(link)
+			$('#detailsBox a').attr('href',link)
+			that.memberPopup.popop($('#detailsBox'),$('#page_4'))
+			isOpen = true;
+		})
+		$('#detailsBox').on('mouseleave',function(){
+			that.memberPopup.closePop()
+			isOpen = false;
 		})
 	},
 	memberPopup:{
